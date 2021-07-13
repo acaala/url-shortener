@@ -12,9 +12,13 @@ const create = async (req, res) => {
 
 const redirect = async (req, res) => {
     const shortUrl = await ShortUrl.findOne({short: req.params.shortUrl })
-    if(shortUrl == null ) return res.sendStatus(404)
-    res.json({ redirect: shortUrl.full })
-  }
+    if(shortUrl == null ) {
+        res.json({ redirect: '/404'})
+        res.sendStatus(404)
+    } else {
+        res.json({ redirect: shortUrl.full })
+    }
+}
 
   module.exports = {
       index,
