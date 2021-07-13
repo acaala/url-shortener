@@ -22,7 +22,7 @@
 		fetch(url, options)
 			.then((res) => res.json())
 			.then((data) => (resData = data))
-			.then((res) => checkUrl());
+			.then(() => checkUrl());
 	};
 
 	const checkUrl = () => {
@@ -37,7 +37,6 @@
 		await fetch('http://localhost:5000/')
 			.then((r) => r.json())
 			.then((data) => (urls = data.shortUrls));
-		console.log(urls);
 	}
 
 	onMount(fetchAllUrls);
