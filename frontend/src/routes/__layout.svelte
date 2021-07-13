@@ -11,4 +11,10 @@
 		crossorigin="anonymous"></script>
 </svelte:head>
 
+<nav class="navbar navbar-light bg-light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/"> Url Shortner </a>
+	</div>
+</nav>
+
 <slot />

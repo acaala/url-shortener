@@ -31,7 +31,7 @@
 </script>
 
 <div class="container text-center mt-5">
-	<h1 class="display-6">Url Shortner</h1>
+	<h1 class="display-6">Enter a url below</h1>
 	<div class="d-flex justify-content-center">
 		<input placeholder="Url" name="fullUrl" class="form-control" type="url" bind:value={fullUrl} />
 
