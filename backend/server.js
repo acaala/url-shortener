@@ -28,8 +28,8 @@ app.get('/:shortUrl', async (req, res) => {
   const shortUrl = await ShortUrl.findOne({short: req.params.shortUrl })
   
   if(shortUrl == null ) return res.sendStatus(404)
-
-  // res.json({ redirect: shortUrl.full })
+  
+  res.json({ redirect: shortUrl.full })
 })
 
 app.listen(process.env.PORT || 5000)

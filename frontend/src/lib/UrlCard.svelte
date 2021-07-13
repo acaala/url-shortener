@@ -11,6 +11,6 @@
 		<p class="card-text">
 			{full}
 		</p>
-		<a href="/" class="btn btn-primary">Go</a>
+		<a href={`/${short}`} class="btn btn-primary">Go</a>
 	</div>
 </div>
