@@ -6,8 +6,12 @@ const index = async (req, res) => {
 }
 
 const create = async (req, res) => {
-    await ShortUrl.create({ full: req.body.fullUrl })
-    res.json({ redirect: '/'})
+    if(await ShortUrl.findOne({full: req.body.fullUrl})){
+        res.json({ alert: 'Already Exists'})
+    } else {
+        await ShortUrl.create({ full: req.body.fullUrl })
+        res.json({ redirect: '/', alert: ''})
+    } 
 }
 
 const redirect = async (req, res) => {
@@ -20,8 +24,15 @@ const redirect = async (req, res) => {
     }
 }
 
+const remove = async (req, res) => {
+    const id = req.params.shortUrl;
+    
+   ShortUrl.deleteOne({short: id}).then(result => res.json({ redirect: '/'}))
+}
+
   module.exports = {
       index,
       create,
-      redirect
+      redirect,
+      remove
   }

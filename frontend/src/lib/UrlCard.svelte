@@ -2,6 +2,15 @@
 	export let _id;
 	export let short;
 	export let full;
+
+	const handleDelete = async () => {
+		const endpoint = `http://localhost:5000/${short}`;
+		fetch(endpoint, {
+			method: 'DELETE'
+		})
+			.then((r) => r.json())
+			.then((data) => (window.location.href = '/'));
+	};
 </script>
 
 <div class="card mb-2">
@@ -12,5 +21,6 @@
 			{full}
 		</p>
 		<a href={`/${short}`} class="btn btn-primary">Go</a>
+		<button on:click={handleDelete} class="btn btn-danger">Delete</button>
 	</div>
 </div>

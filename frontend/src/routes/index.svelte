@@ -5,6 +5,10 @@
 	let fullUrl: string;
 	let urls = [];
 	const url = 'http://localhost:5000/shortUrls';
+	let resData = {
+		redirect: '',
+		alert: ''
+	};
 
 	const handleSubmit = () => {
 		const options = {
@@ -17,7 +21,16 @@
 
 		fetch(url, options)
 			.then((res) => res.json())
-			.then((res) => (window.location.href = res.redirect));
+			.then((data) => (resData = data))
+			.then((res) => checkUrl());
+	};
+
+	const checkUrl = () => {
+		if (resData.alert != '') {
+			window.alert(resData.alert);
+		} else {
+			window.location.href = resData.redirect;
+		}
 	};
 
 	async function fetchAllUrls() {

@@ -9,4 +9,6 @@ router.post('/shortUrls', urlController.create)
 
 router.get('/:shortUrl', urlController.redirect)
 
+router.delete('/:shortUrl', urlController.remove)
+
 module.exports = router
