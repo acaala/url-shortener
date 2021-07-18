@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-light bg-light">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="/"> Url Shortner </a>
+		<a class="navbar-brand" href="/"> Url Shortener </a>
 	</div>
 </nav>
 
