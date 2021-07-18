@@ -4,7 +4,7 @@
 	export let full;
 
 	const handleDelete = async () => {
-		const endpoint = `http://localhost:5000/${short}`;
+		const endpoint = `https://coast-url.herokuapp.com/${short}`;
 		fetch(endpoint, {
 			method: 'DELETE'
 		})
