@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 	export async function load({ page, fetch }) {
-		const url = `https://coast-url-shorter.herokuapp.com/${page.params.slug}`;
+		const url = `https://coast-url.herokuapp.com/${page.params.slug}`;
 
 		await fetch(url)
 			.then((r) => r.json())
