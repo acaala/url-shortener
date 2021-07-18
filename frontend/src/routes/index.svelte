@@ -4,7 +4,7 @@
 
 	let fullUrl: string;
 	let urls = [];
-	const url = 'https://coast-url-shortener.herokuapp.com/shortUrls';
+	const url = 'https://coast-url.herokuapp.com/shortUrls';
 	let resData = {
 		redirect: '',
 		alert: ''
@@ -34,7 +34,7 @@
 	};
 
 	async function fetchAllUrls() {
-		await fetch('https://coast-url-shortener.herokuapp.com')
+		await fetch('https://coast-url.herokuapp.com')
 			.then((r) => r.json())
 			.then((data) => (urls = data.shortUrls));
 	}
