@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const corse = require('cors')
 const urlRoutes = require('./routes/urlRoutes')
 const app = express()
 
@@ -12,6 +13,9 @@ const db = mongoose.connection;
 db.once('open', () => console.log('Connected to DB'))
 
 app.use(express.json())
+app.use(cors({
+    origin: '*'
+}))
 app.use('/', urlRoutes)
 
 app.listen(process.env.PORT || 5000)
