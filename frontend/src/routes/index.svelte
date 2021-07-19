@@ -52,6 +52,7 @@
 </div>
 
 <div class="container mt-5">
+	<h4 class="text-muted">Recently Created Urls</h4>
 	{#if urls.length > 0}
 		{#each urls as url}
 			<UrlCard {...url} />
