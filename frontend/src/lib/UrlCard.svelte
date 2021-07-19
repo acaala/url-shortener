@@ -1,5 +1,4 @@
 <script>
-	export let _id;
 	export let short;
 	export let full;
 
