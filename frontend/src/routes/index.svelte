@@ -6,10 +6,6 @@
 	let fullUrl: string;
 	let urls = [];
 	const url = 'https://coast-url.herokuapp.com/shortUrls';
-	let resData = {
-		redirect: '',
-		alert: ''
-	};
 
 	const handleSubmit = () => {
 		const options = {
@@ -22,16 +18,7 @@
 
 		fetch(url, options)
 			.then((res) => res.json())
-			.then((data) => (resData = data))
-			.then(() => checkUrl());
-	};
-
-	const checkUrl = () => {
-		if (resData.alert != '') {
-			window.alert(resData.alert);
-		} else {
-			window.location.href = resData.redirect;
-		}
+			.then((data) => (window.location.href = data.redirect));
 	};
 
 	async function fetchAllUrls() {
