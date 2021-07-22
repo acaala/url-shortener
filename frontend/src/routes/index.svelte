@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import UrlCard from '$lib/UrlCard.svelte';
+	import Loading from '$lib/Loading.svelte';
 
 	let fullUrl: string;
 	let urls = [];
@@ -58,6 +59,8 @@
 			<UrlCard {...url} />
 		{/each}
 	{:else}
-		<p>No urls yet..</p>
+		<div class="d-flex justify-content-center mt-5">
+			<Loading />
+		</div>
 	{/if}
 </div>
